@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { IdentifyRequest, IdentifyResponse } from '@/types';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://identity-reconciliation-api-scj2.onrender.com/api';
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
