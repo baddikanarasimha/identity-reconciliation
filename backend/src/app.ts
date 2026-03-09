@@ -72,6 +72,13 @@ app.get('/', (_req, res) => {
   });
 });
 
+// Keep alive ping
+setInterval(() => {
+  fetch('https://identity-reconciliation-api-scj2.onrender.com/api/health')
+    .then(() => logger.info('Keep-alive ping sent'))
+    .catch(() => logger.warn('Keep-alive ping failed'));
+}, 10 * 60 * 1000); // every 10 minutes
+
 // ── 404 Handler ───────────────────────────────────────────────────────────
 app.use(notFoundHandler);
 
